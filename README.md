@@ -8,7 +8,8 @@ To upgrade this site to Drupal 9, proceed to the following directions.
 
 Prepare for the Workshop
 ===
-1. When you receive an invite to an Acquia Cloud Platform application via email, accept the invite.
+
+1. When you receive an invite to an Acquia Cloud Platform application via email, accept the invite. This will create an Acquia Cloud Platform account for you and add you to the correct application.
 1. On the Acquia Cloud Platform site on cloud.acquia.com, create a new Cloud IDE for yourself.
    ![image](https://user-images.githubusercontent.com/539205/115599148-407c6900-a2a9-11eb-97f4-8de9404fa4c8.png)
 1. Login to the Cloud IDE and familiarize yourself with the user interface.
