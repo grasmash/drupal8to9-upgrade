@@ -1,0 +1,82 @@
+{
+  "name": "acquia/drupal-minimal-project",
+  "description": "Minimal Acquia-compatible Drupal application based on the Drupal Recommended Project",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Acquia Engineering",
+      "homepage": "https://www.acquia.com",
+      "role": "Maintainer"
+    }
+  ],
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  },
+  "require": {
+    "composer/installers": "^1.9",
+    "cweagans/composer-patches": "^1.6",
+    "drupal/core-composer-scaffold": "^9",
+    "drupal/core-recommended": "^9",
+    "drush/drush": "^10.4"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "docroot/"
+      },
+      "file-mapping": {
+        "[web-root]/sites/default/default.services.yml": {
+          "mode": "replace",
+          "path": "docroot/core/assets/scaffold/files/default.services.yml",
+          "overwrite": false
+        },
+        "[web-root]/sites/default/default.settings.php": {
+          "mode": "replace",
+          "path": "docroot/core/assets/scaffold/files/default.settings.php",
+          "overwrite": false
+        }
+      },
+      "gitignore": true
+    },
+    "installer-paths": {
+      "docroot/core": [
+        "type:drupal-core"
+      ],
+      "docroot/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "docroot/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "docroot/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "docroot/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/Commands/contrib/{$name}": [
+        "type:drupal-drush"
+      ],
+      "docroot/modules/custom/{$name}": [
+        "type:drupal-custom-module"
+      ],
+      "docroot/themes/custom/{$name}": [
+        "type:drupal-custom-theme"
+      ]
+    },
+    "enable-patching": true,
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
+    "patches": {}
+  }
+
+}
