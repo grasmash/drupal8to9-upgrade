@@ -10,7 +10,7 @@ Prepare for the Workshop
 ===
 1. When you receive an invite to an Acquia Cloud Platform application via email, accept the invite.
 1. On the Acquia Cloud Platform site on cloud.acquia.com, create a new Cloud IDE for yourself.
-   ![image](https://user-images.githubusercontent.com/539205/115599067-20e54080-a2a9-11eb-93ee-0a73301b0377.png)
+   ![image](https://user-images.githubusercontent.com/539205/115599148-407c6900-a2a9-11eb-97f4-8de9404fa4c8.png)
 1. Login to the Cloud IDE and familiarize yourself with the user interface.
 1. If you'd like, you can complete steps 1-3 in the "Workshop Walkthrough" below so that you join thi workshop with
    Drupal already installed.
