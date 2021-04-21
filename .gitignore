@@ -15,3 +15,5 @@
 /docroot/themes/contrib
 /.editorconfig
 /.gitattributes
+
+.idea

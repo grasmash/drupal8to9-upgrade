@@ -1,28 +1,38 @@
-Acquia Drupal Minimal Project
+Upgrade Drupal 8 > 9 in 20 Minutes
 ====
 
-This project template provides a minimal Drupal 9 application to be hosted on Acquia. It is based on the [Drupal Recommended Project](https://github.com/drupal/recommended-project/tree/9.0.x), with the principal difference being a relocated docroot for compatibility with Acquia hosting. It includes only essential dependencies and configuration to install and host Drupal 9 on Acquia.
+This repository contains an example Drupal 8 application to be used for the "Upgrade Drupal 8 > 9 in 20 Minutes" workshop.
 
-This project targets experienced developers who prefer to build a new application from the ground up. If you prefer a more complete out-of-the-box Drupal 9 experience on Acquia Cloud, consider trying the [Acquia Drupal Recommended Project](https://github.com/acquia/drupal-recommended-project) instead.
+To upgrade this site to Drupal 9, proceed to the following directions.
 
-## Installation and usage
+Workshop Walkthrough
+===
 
-Create a new project using Composer:
-```
-composer create-project --no-interaction acquia/drupal-minimal-project
-```
-
-Once you create the project, you can and should customize `composer.json` and the rest of the project to suit your needs. You will receive updates from any dependent packages, but not from the project template itself. It's yours to keep!
-
-For instance, you can add a new package by running the following command and committing the changed `composer.json` and `composer.lock` to Git:
-```
-composer require acquia/blt
-```
-
-# License
-
-Copyright (C) 2020 Acquia, Inc.
-
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+1. Open CLI in IDE browser tab.
+1. ```
+   git clone https://github.com/grasmash/drupal8to9-upgrade .
+   composer install
+   drush site-install -y
+   ```
+1. Run `composer require drupal/upgrade_status`
+1. Run `drush pm-enable upgrade_status -y`
+1. Run `drush user-login` and cmd+click the link.
+1. Visit `/admin/reports/upgrade-status` on the Drupal site. Reports => Upgrade Status.
+1. Open composer.json in the IDE.
+1. Change:
+   ```
+   "drupal/core-composer-scaffold": "^8.9.0",
+   "drupal/core-recommended": "^8.9.0",
+   ```
+  To:
+  ```
+  "drupal/core-composer-scaffold": "^9.2.0",
+  "drupal/core-recommended": "^9.2.0",
+  ```
+1. Run:
+   ```
+   composer update
+   drush cache-rebuild
+   drush updatedb
+   ```
+1. You're done!
