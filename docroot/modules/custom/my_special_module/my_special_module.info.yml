@@ -1,3 +1,4 @@
 type: module
 name: My special module
 description: An example custom module that is not Drupal 9 compatible.
+core: 8.x
