@@ -1,22 +1,21 @@
-Upgrade Drupal 8 > 9 in 20 Minutes
-====
+# Upgrade Drupal 8 > 9 in 20 Minutes
 
 This repository contains an example Drupal 8 application to be used for the "Upgrade Drupal 8 > 9 in 20 Minutes" workshop.
 
 To upgrade this site to Drupal 9, proceed to the following directions.
 
-Prepare for the Workshop
-===
+## Prepare for the Workshop
 
-1. When you receive an invite to an Acquia Cloud Platform application via email, accept the invite. This will create an Acquia Cloud Platform account for you and add you to the correct application.
-1. On the Acquia Cloud Platform site on cloud.acquia.com, create a new Cloud IDE for yourself.
+The "hands on" portion of the workshop will be performed in Acquia's recommended development environment, [Acquia Cloud IDE](https://www.acquia.com/products/drupal-cloud/cloud-ide). If you're already an Acquia customer you may use your existing Cloud Platform application. In any case, you will be invited to join our "Learning Services" sandbox application where you are free to create a Cloud IDE for this workshop.
+
+1. When you receive an invite to the Learning Services application from Acquia via email, accept the invite. You will be prompted to login or create an Acquia Cloud Platform account, and you will then be prompted to accept the invitation for that account.
+1. On the Acquia Cloud Platform site on cloud.acquia.com, create a new Cloud IDE for yourself. Please only create one as the number available are limited. This IDE will be available for 3 days following the workshop.
    ![image](https://user-images.githubusercontent.com/539205/115599148-407c6900-a2a9-11eb-97f4-8de9404fa4c8.png)
 1. Login to the Cloud IDE and familiarize yourself with the user interface.
-1. If you'd like, you can complete steps 1-3 in the "Workshop Walkthrough" below so that you join thi workshop with
-   Drupal already installed.
+1. If you'd like, you can complete steps 1-3 in the "Workshop Walkthrough" below so that you join this workshop with
+   Drupal already installed on your IDE.
 
-Workshop Walkthrough
-===
+## Workshop Walkthrough
 
 ### Set up your Cloud IDE with a Drupal 8 site
 
@@ -53,8 +52,8 @@ Next, we will download the Upgrade Status module. This will assist us with ident
    ```json
    "drupal/token": "1.5.0",
    ```
-   To:json
-   ```
+   To:
+   ```json
    "drupal/token": "^1.7.0",
    ```
 1. Run `composer update` to update your dependencies (and `composer.lock`) to match your newly defined requirements.
@@ -64,7 +63,7 @@ Your contributed modules are now Drupal 9 compatible!
 ### Upgrade custom code for
 
 1. Let's enable an example custom module called `my_special_module`. This modules in NOT Drupal 9 compatible. Run:
-   ```
+   ```bash
     drush pm-enable my_special_module -y
    ```
 1. Visit `/admin/reports/upgrade-status` on the Drupal site again. Re-run the scan.
@@ -74,7 +73,7 @@ Your contributed modules are now Drupal 9 compatible!
 1. You'll see details on exactlly what needs to be changed in the module:
    ![image](https://user-images.githubusercontent.com/539205/115739800-38c9cc80-a35c-11eb-8505-b74258a5ced4.png)
 1. Open `docroot/modules/custom/my_special_module/my_special_module.info.yml` and change:
-   ```
+   ```yml
    core: 8.x
    ```
    To:
