@@ -36,7 +36,7 @@ The "hands on" portion of the workshop will be performed in Acquia's recommended
 
 Next, we will download the [Upgrade Status module](https://www.drupal.org/project/upgrade_status). This will assist us with identifying what changes will be necessary to make our Drupal 8 site Drupal 9 compatible.
 
-1. Run:
+1. To add Upgrade Status module (and all of its dependencies) to your site's development dependencies, run:
    ```bash
    composer require drupal/upgrade_status
    composer require drupal/core-dev:8.9.0 --dev -W
@@ -67,7 +67,7 @@ Your contributed modules are now Drupal 9 compatible!
 
 ### Upgrade custom code
 
-1. Let's enable an example custom module called `my_special_module`. This module is NOT Drupal 9 compatible. Run:
+1. The second module is an example custom module called `my_special_module`. This module is NOT Drupal 9 compatible. Run:
    ```bash
     drush pm-enable my_special_module -y
    ```
