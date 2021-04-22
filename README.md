@@ -93,6 +93,7 @@ Your contributed modules are now Drupal 9 compatible!
    ```php
    \Drupal::messenger()->addMessage(t("Welcome @name! You are a special person.", ['@name' => $account->getAccountName()]));
    ```
+2. Re-scan the module once more in the Upgrade Status report. This time, it too moves down to the "Drupal 9 Compatible" fieldset!
 
 ### Upgrade Drupal core.
 
