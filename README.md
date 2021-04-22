@@ -29,11 +29,12 @@ The "hands on" portion of the workshop will be performed in Acquia's recommended
    composer install
    drush site-install -y
    ```
-1. If you'd like, you may login to the new Drupal site and validate that it is working as expected. Just `drush user-login` and cmd+click the link.
+1. If you'd like, you may login to the new Drupal site and validate that it is working as expected. Just `drush user-login` and cmd+click the link. The site is called "Drush Site-Install" and has no content yet. <img width="1540" alt="Screen Shot 2021-04-22 at 12 43 31 PM" src="https://user-images.githubusercontent.com/332535/115776003-76345700-a368-11eb-9236-6fb8059992d6.png">
+
 
 ### Add the "Upgrade Status" tool to your Drupal 8 site
 
-Next, we will download the Upgrade Status module. This will assist us with identifying what changes will be necessary to make our Drupal 8 site Drupal 9 compatible.
+Next, we will download the [Upgrade Status module](https://www.drupal.org/project/upgrade_status). This will assist us with identifying what changes will be necessary to make our Drupal 8 site Drupal 9 compatible.
 
 1. Run:
    ```bash
