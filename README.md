@@ -118,6 +118,7 @@ Now that we've successfully upgraded to Drupal 9, we can remove some of the tool
 
 ```bash
 drush pm-uninstall upgrade_status
-composer remove drupal/upgrade_status
-composer remove drupal/core-dev --dev -W
+composer remove drupal/update_status --no-update
+composer remove drupal/core-dev --dev --no update
+composer update
 ```
