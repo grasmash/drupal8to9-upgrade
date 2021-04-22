@@ -24,7 +24,7 @@ Workshop Walkthrough
 1. Open CLI pane in the IDE browser tab.
    ![image](https://user-images.githubusercontent.com/539205/115598056-fd6dc600-a2a7-11eb-9b07-f1e365898981.png)
 1. In the CLI pane of the Cloud IDE tab, Run:
-   ```
+   ```bash
    git clone https://github.com/grasmash/drupal8to9-upgrade .
    composer install
    drush site-install -y
@@ -36,7 +36,7 @@ Workshop Walkthrough
 Next, we will download the Upgrade Status module. This will assist us with identifying what changes will be necessary to make our Drupal 8 site Drupal 9 compatible.
 
 1. Run:
-   ```
+   ```bash
    composer require drupal/upgrade_status
    composer require drupal/core-dev --dev -W
    drush pm-enable upgrade_status -y
@@ -50,10 +50,10 @@ Next, we will download the Upgrade Status module. This will assist us with ident
 1. Note on the "Upgrade Status" report that the Token module is listed as incompatible with Drupal 9. However, that notice also indicates under the "Plan" column that "8.x-1.7+ is Drupal 9 compatible.". We will therefore update the Token module to _at least_ 8.x-1.7.
   ![image](https://user-images.githubusercontent.com/539205/115734335-9e678a00-a357-11eb-8997-5163313a8f2b.png)
 1. In Drupal's Semantic versioning for Composer, the canonical version 8.x-1.7 is transformed to `1.7.0`. We will therefore use a version constraint of `"drupal/token": "^1.7.0"` to instruct Composer to install a minimum version of Token 1.7.0. Upgrade the token module by opening `composer.json` in the IDE "files" pane and changing the following files content:
-   ```
+   ```json
    "drupal/token": "1.5.0",
    ```
-   To:
+   To:json
    ```
    "drupal/token": "^1.7.0",
    ```
@@ -73,24 +73,39 @@ Your contributed modules are now Drupal 9 compatible!
    ![image](https://user-images.githubusercontent.com/539205/115738683-4468c380-a35b-11eb-898c-ba040d91f753.png)
 1. You'll see details on exactlly what needs to be changed in the module:
    ![image](https://user-images.githubusercontent.com/539205/115739800-38c9cc80-a35c-11eb-8505-b74258a5ced4.png)
-
+1. Open `docroot/modules/custom/my_special_module/my_special_module.info.yml` and change:
+   ```
+   core: 8.x
+   ```
+   To:
+   ```yml
+   core_version_requirement: ^8 || ^9
+   ```
+1. Open `docroot/modules/custom/my_special_module/my_special_module.module` and change:
+   ```php
+   drupal_set_message(t("Welcome @name! You are a special person.", ['@name' => $account->getAccountName()]));
+   ```
+   To:
+   ```php
+   \Drupal::messenger()->addMessage(t("Welcome @name! You are a special person.", ['@name' => $account->getAccountName()]));
+   ```
 
 ### Upgrade Drupal core.
 
 1. Open composer.json in the IDE.
    ![image](https://user-images.githubusercontent.com/539205/115598302-41f96180-a2a8-11eb-8896-bba917745afa.png)
 1. Change:
-   ```
+   ```json
    "drupal/core-composer-scaffold": "^8.9.0",
    "drupal/core-recommended": "^8.9.0",
    ```
    To:
-   ```
+   ```json
    "drupal/core-composer-scaffold": "^9.2.0",
    "drupal/core-recommended": "^9.2.0",
    ```
 1. Run:
-   ```
+   ```bash
    composer update
    drush cache-rebuild
    drush updatedb
