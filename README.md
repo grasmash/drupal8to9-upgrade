@@ -118,9 +118,10 @@ Now that all of our modules are Drupal 9 compatible, the last step is to upgrade
    ```bash
    composer update
    drush cache-rebuild
-   drush updatedb
+   drush updatedb -y
    ```
-1. You're done!
+1. You're done! To verify, go to **Reports** > **Status report** and verify that your **Drupal version** reads 9.2.0-dev instead of 8.9.14! <img width="510" alt="Screen Shot 2021-04-22 at 1 13 27 PM" src="https://user-images.githubusercontent.com/332535/115779300-a67df480-a36c-11eb-8d60-812c7bdb812d.png">
+
 
 ### Cleanup
 
@@ -128,7 +129,7 @@ Now that we've successfully upgraded to Drupal 9, we can remove some of the tool
 
 ```bash
 drush pm-uninstall upgrade_status
-composer remove drupal/update_status
+composer remove drupal/upgrade_status
 composer remove drupal/core-dev --dev
 composer update
 ```
@@ -136,3 +137,6 @@ composer update
 ### Troubleshooting
 #### I get an error "Your requirements could not be resolved to an installable set of packages."
 This is caused by a typo in your composer.json, for example specifying `9.2.0` instead of `^9.2.0`. Check the results **carefully**... every character matters! :)
+
+#### I see notices when running `composer update` about Package container-interop/container-interop being abandoned
+Don't sweat it... this is coming from Drupal core because of one of its upstream dependencies; nothing you're doing wrong, and it's a harmless error.
