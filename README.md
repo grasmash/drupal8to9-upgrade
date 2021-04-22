@@ -71,7 +71,7 @@ Your contributed modules are now Drupal 9 compatible!
    ```bash
     drush pm-enable my_special_module -y
    ```
-1. Visit `/admin/reports/upgrade-status` on the Drupal site again. Re-run the scan.
+1. Visit `/admin/reports/upgrade-status` on the Drupal site again. Check the row for **My special module**, and click **Scan selected**.
    ![image](https://user-images.githubusercontent.com/539205/115738525-20a57d80-a35b-11eb-9c6d-47dc1bd1f7ca.png)
 1. Click on the "2 problems" link for the "My special module" module:
    ![image](https://user-images.githubusercontent.com/539205/115738683-4468c380-a35b-11eb-898c-ba040d91f753.png)
