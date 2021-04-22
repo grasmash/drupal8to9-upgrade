@@ -41,11 +41,20 @@ Workshop Walkthrough
 
 ### Upgrade Contributed modules
 
-1. Upgrade the token module by opening `composer.json` in the IDE "files" pane and changing the following files content:
+1 Note on the "Upgrade Status" report that the Token module is listed as incompatible with Drupal 9. However, that notice also indicates under the "Plan" column that "8.x-1.7+ is Drupal 9 compatible.". We will therefore update the Token module to _at least_ 8.x-1.7. 
+  ![image](https://user-images.githubusercontent.com/539205/115734335-9e678a00-a357-11eb-8997-5163313a8f2b.png)
+
+1. In Drupal's Semantic versioning for Composer, the canonical version 8.x-1.7 is transformed to `1.7.0`. We will therefore use a version constraint of `"drupal/token": "^1.7.0"` to instruct Composer to install a minimum version of Token 1.7.0. Upgrade the token module by opening `composer.json` in the IDE "files" pane and changing the following files content:
+  ```
+  "drupal/token": "1.5.0",
+  ```
+  To:
   ```
   "drupal/token": "^1.7.0",
   ```
 1. Run `composer update` to update your dependencies (and `composer.lock`) to match your newly defined requirements.
+
+Your contributed modules are now Drupal 9 compatible!
 
 ### Upgrade custom code for
 
