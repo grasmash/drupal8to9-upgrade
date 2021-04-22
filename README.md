@@ -20,7 +20,7 @@ Workshop Walkthrough
 
 ### Set up your Cloud IDE with a Drupal 8 site
 
-1. Login to your Cloud IDE. 
+1. Login to your Cloud IDE.
 1. Open CLI pane in the IDE browser tab.
    ![image](https://user-images.githubusercontent.com/539205/115598056-fd6dc600-a2a7-11eb-9b07-f1e365898981.png)
 1. In the CLI pane of the Cloud IDE tab, Run:
@@ -41,7 +41,7 @@ Workshop Walkthrough
 
 ### Upgrade Contributed modules
 
-1. Note on the "Upgrade Status" report that the Token module is listed as incompatible with Drupal 9. However, that notice also indicates under the "Plan" column that "8.x-1.7+ is Drupal 9 compatible.". We will therefore update the Token module to _at least_ 8.x-1.7. 
+1. Note on the "Upgrade Status" report that the Token module is listed as incompatible with Drupal 9. However, that notice also indicates under the "Plan" column that "8.x-1.7+ is Drupal 9 compatible.". We will therefore update the Token module to _at least_ 8.x-1.7.
   ![image](https://user-images.githubusercontent.com/539205/115734335-9e678a00-a357-11eb-8997-5163313a8f2b.png)
 1. In Drupal's Semantic versioning for Composer, the canonical version 8.x-1.7 is transformed to `1.7.0`. We will therefore use a version constraint of `"drupal/token": "^1.7.0"` to instruct Composer to install a minimum version of Token 1.7.0. Upgrade the token module by opening `composer.json` in the IDE "files" pane and changing the following files content:
    ```
@@ -57,7 +57,11 @@ Your contributed modules are now Drupal 9 compatible!
 
 ### Upgrade custom code for
 
-@todo
+1. Let's enable an example custom module called `my_special_module`. This modules in NOT Drupal 9 compatible. Run:
+   ```
+    drush pm-enable my_special_module -y
+   ```
+1. Visit `/admin/reports/upgrade-status` on the Drupal site again. Re-run the scan.
 
 ### Upgrade Drupal core.
 
