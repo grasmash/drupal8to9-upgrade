@@ -96,6 +96,7 @@ Your contributed modules are now Drupal 9 compatible!
 2. Re-scan the module once more in the Upgrade Status report. This time, it too moves down to the "Drupal 9 Compatible" fieldset!
 
 ### Upgrade Drupal core.
+Now that all of our modules are Drupal 9 compatible, the last step is to upgrade Drupal core.
 
 1. Open composer.json in the IDE.
    ![image](https://user-images.githubusercontent.com/539205/115598302-41f96180-a2a8-11eb-8896-bba917745afa.png)
