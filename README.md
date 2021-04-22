@@ -66,7 +66,7 @@ Your contributed modules are now Drupal 9 compatible!
 
 ### Upgrade custom code for
 
-1. Let's enable an example custom module called `my_special_module`. This modules in NOT Drupal 9 compatible. Run:
+1. Let's enable an example custom module called `my_special_module`. This module is NOT Drupal 9 compatible. Run:
    ```bash
     drush pm-enable my_special_module -y
    ```
