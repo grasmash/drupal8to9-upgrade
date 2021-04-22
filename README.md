@@ -1,3 +1,4 @@
+
 # Upgrade Drupal 8 > 9 in 20 Minutes
 
 This repository contains an example Drupal 8 application to be used for the "Upgrade Drupal 8 > 9 in 20 Minutes" workshop.
@@ -12,8 +13,8 @@ The "hands on" portion of the workshop will be performed in Acquia's recommended
 1. On the ["Acquia Learning Services"](https://cloud.acquia.com/a/applications/11566968-0964-4659-9a21-6ef99adae3df) application on cloud.acquia.com, create a new Cloud IDE for yourself by clicking **Actions** > **Create Cloud IDE** and give it a **Label** such as **Drupal 9 Upgrade Workshop**. Please only create **one** IDE, as the number available are limited. This IDE will be available for 3 days following the workshop.
    ![image](https://user-images.githubusercontent.com/539205/115599148-407c6900-a2a9-11eb-97f4-8de9404fa4c8.png)
 1. The IDE will take 10-15 minutes to provision. You will see it listed alongside your other environments such as Dev, Stage, and Prod. In the mean time, feel free to peruse the [Cloud IDE Product Documentation](https://docs.acquia.com/ide/) to familiarize yourself with the user interface.
-1. Once provisioning is complete, click **Launch IDE** and login to the Cloud IDE and familiarize yourself with the user interface.
-1. If you'd like, you can complete steps 1-3 in the "Workshop Walkthrough" below so that you join this workshop with
+1. Once provisioning is complete, click **Launch Cloud IDE** to login to the Cloud IDE. <img width="463" alt="Screen Shot 2021-04-22 at 12 28 59 PM" src="https://user-images.githubusercontent.com/332535/115774531-8fd49f00-a366-11eb-8319-5fe68d6ef6f0.png">
+3. If you'd like, you can complete steps 1-3 in the "Workshop Walkthrough" below so that you join this workshop with
    Drupal already installed on your IDE.
 
 ## Workshop Walkthrough
