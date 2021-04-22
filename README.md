@@ -39,8 +39,11 @@ Workshop Walkthrough
 
 ### Upgrade Contributed modules
 
-1. Upgrade contributed modules.
-   @todo
+1. Upgrade the token module by opening `composer.json` in the IDE "files" pane and changing the following files content:
+  ```
+  "drupal/token": "^1.7.0",
+  ```
+1. Run `composer update` to update your dependencies (and `composer.lock`) to match your newly defined requirements.
 
 ### Upgrade custom code for
 
