@@ -38,7 +38,7 @@ Next, we will download the Upgrade Status module. This will assist us with ident
 1. Run:
    ```bash
    composer require drupal/upgrade_status
-   composer require drupal/core-dev --dev -W
+   composer require drupal/core-dev:8.9.0 --dev -W
    drush pm-enable upgrade_status -y
    ```
 1. If you're not already logged into your Drupal site, run `drush user-login` and cmd+click the link to login.
@@ -98,11 +98,15 @@ Your contributed modules are now Drupal 9 compatible!
    ```json
    "drupal/core-composer-scaffold": "^8.9.0",
    "drupal/core-recommended": "^8.9.0",
+   ...
+   "drupal/core-dev": "^8.9.0",
    ```
    To:
    ```json
    "drupal/core-composer-scaffold": "^9.2.0",
    "drupal/core-recommended": "^9.2.0",
+   ...
+   "drupal/core-dev": "^9.2.0",
    ```
 1. Run:
    ```bash
@@ -118,7 +122,7 @@ Now that we've successfully upgraded to Drupal 9, we can remove some of the tool
 
 ```bash
 drush pm-uninstall upgrade_status
-composer remove drupal/update_status --no-update
-composer remove drupal/core-dev --dev --no update
+composer remove drupal/update_status
+composer remove drupal/core-dev --dev
 composer update
 ```
