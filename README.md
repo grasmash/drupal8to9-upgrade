@@ -61,6 +61,7 @@ Next, we will download the [Upgrade Status module](https://www.drupal.org/projec
    <img width="1535" alt="Screen Shot 2021-04-22 at 12 40 25 PM" src="https://user-images.githubusercontent.com/332535/115775835-37060600-a368-11eb-86a3-6588698dff8a.png">
 
 1. Run `composer update` to update your dependencies (and `composer.lock`) to match your newly defined requirements.
+2. Run `drush cache-rebuild` and reload the Upgrade Status report. You should see that Token has now been moved under a "Drupal 9 Compatible" heading and the row is green <img width="1501" alt="Screen Shot 2021-04-22 at 12 53 01 PM" src="https://user-images.githubusercontent.com/332535/115777051-b34d1900-a369-11eb-9870-c8145fdb03ff.png">
 
 Your contributed modules are now Drupal 9 compatible!
 
