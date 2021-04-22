@@ -22,7 +22,7 @@ The "hands on" portion of the workshop will be performed in Acquia's recommended
 ### Set up your Cloud IDE with a Drupal 8 site
 
 1. Login to your Cloud IDE.
-1. Open CLI pane in the IDE browser tab.
+1. Open Terminal pane in the IDE browser tab. You will start off in the **~/project** directory, which is where your Drupal application will live.
    ![image](https://user-images.githubusercontent.com/539205/115598056-fd6dc600-a2a7-11eb-9b07-f1e365898981.png)
 1. In the CLI pane of the Cloud IDE tab, Run:
    ```bash
