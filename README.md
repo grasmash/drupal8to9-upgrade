@@ -1,4 +1,3 @@
-
 # Upgrade Drupal 8 > 9 in 20 Minutes
 
 This repository contains an example Drupal 8 application to be used for the "Upgrade Drupal 8 > 9 in 20 Minutes" workshop.
@@ -58,6 +57,8 @@ Next, we will download the Upgrade Status module. This will assist us with ident
    ```json
    "drupal/token": "^1.7.0",
    ```
+   <img width="1535" alt="Screen Shot 2021-04-22 at 12 40 25 PM" src="https://user-images.githubusercontent.com/332535/115775835-37060600-a368-11eb-86a3-6588698dff8a.png">
+
 1. Run `composer update` to update your dependencies (and `composer.lock`) to match your newly defined requirements.
 
 Your contributed modules are now Drupal 9 compatible!
