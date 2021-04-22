@@ -132,3 +132,7 @@ composer remove drupal/update_status
 composer remove drupal/core-dev --dev
 composer update
 ```
+
+### Troubleshooting
+#### I get an error "Your requirements could not be resolved to an installable set of packages."
+This is caused by a typo in your composer.json, for example specifying `9.2.0` instead of `^9.2.0`. Check the results **carefully**... every character matters! :)
