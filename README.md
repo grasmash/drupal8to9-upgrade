@@ -33,8 +33,14 @@ Workshop Walkthrough
 
 ### Add the "Upgrade Status" tool to your Drupal 8 site
 
-1. Run `composer require drupal/upgrade_status`. This will download the upgrade_status module to `docroot/modules/contrib/` via Composer.
-1. Run `drush pm-enable upgrade_status -y`
+Next, we will download the Upgrade Status module. This will assist us with identifying what changes will be necessary to make our Drupal 8 site Drupal 9 compatible.
+
+1. Run:
+   ```
+   composer require drupal/upgrade_status
+   composer require drupal/core-dev --dev -W
+   drush pm-enable upgrade_status -y
+   ```
 1. If you're not already logged into your Drupal site, run `drush user-login` and cmd+click the link to login.
 1. Visit `/admin/reports/upgrade-status` on the Drupal site. You can navigate there by first clicking "Reports" in the admin menu and then clikcing "Upgrade Status."
    ![image](https://user-images.githubusercontent.com/539205/115598426-6bb28880-a2a8-11eb-996e-f1e6ca758b79.png)
@@ -62,6 +68,12 @@ Your contributed modules are now Drupal 9 compatible!
     drush pm-enable my_special_module -y
    ```
 1. Visit `/admin/reports/upgrade-status` on the Drupal site again. Re-run the scan.
+   ![image](https://user-images.githubusercontent.com/539205/115738525-20a57d80-a35b-11eb-9c6d-47dc1bd1f7ca.png)
+1. Click on the "2 problems" link for the "My special module" module:
+   ![image](https://user-images.githubusercontent.com/539205/115738683-4468c380-a35b-11eb-898c-ba040d91f753.png)
+1. You'll see details on exactlly what needs to be changed in the module:
+   ![image](https://user-images.githubusercontent.com/539205/115739800-38c9cc80-a35c-11eb-8505-b74258a5ced4.png)
+
 
 ### Upgrade Drupal core.
 
