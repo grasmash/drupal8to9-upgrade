@@ -65,7 +65,7 @@ Next, we will download the [Upgrade Status module](https://www.drupal.org/projec
 
 Your contributed modules are now Drupal 9 compatible!
 
-### Upgrade custom code for
+### Upgrade custom code
 
 1. Let's enable an example custom module called `my_special_module`. This module is NOT Drupal 9 compatible. Run:
    ```bash
