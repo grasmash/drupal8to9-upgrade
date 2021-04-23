@@ -21,7 +21,8 @@
     "drupal/core-composer-scaffold": "^8.9.0",
     "drupal/core-recommended": "^8.9.0",
     "drupal/token": "1.5.0",
-    "drush/drush": "^10.4"
+    "drush/drush": "^10.4",
+    "phpunit/phpunit": "~7"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
