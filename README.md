@@ -28,23 +28,23 @@ The "hands on" portion of the workshop will be performed in Acquia's recommended
    git clone https://github.com/grasmash/drupal8to9-upgrade .
    ```
 1. Install all the necessary modules and libraries using Composer. In the terminal run:
-```bash
+   ```bash
    composer install
    ```
 1. Now, install the Drupal site automatically using Drush. In the terminal, run:
-```bash
+   ```bash
    drush site-install -y
-```
+   ```
 1. Your codebase (files) is all ready to go! If you do not, then click the "Refresh" button on the explorer pane of your IDE.
- ![image](https://user-images.githubusercontent.com/673633/115936908-26cf5300-a45c-11eb-9c79-33710b6530fb.png)
+   ![image](https://user-images.githubusercontent.com/673633/115936908-26cf5300-a45c-11eb-9c79-33710b6530fb.png)
 
 1. Now, you may login to the new Drupal site and validate that it is working as expected. In the terminal, run:
-```bash
+   ```bash
     drush user-login
-```
+   ```
 Hold the cmd key and click the link. This will open the your Drupal site in a new tab and log you in automatically. The site is called "Drush Site-Install" and has no content yet. You are now all set and ready to migrate your test site!
 
- ![image](https://user-images.githubusercontent.com/332535/115776003-76345700-a368-11eb-9236-6fb8059992d6.png)
+   ![image](https://user-images.githubusercontent.com/332535/115776003-76345700-a368-11eb-9236-6fb8059992d6.png)
 
 
 ### Add the "Upgrade Status" tool to your Drupal 8 site
@@ -52,16 +52,16 @@ Hold the cmd key and click the link. This will open the your Drupal site in a ne
 Next, we will download the [Upgrade Status module](https://www.drupal.org/project/upgrade_status). This will assist us with identifying what changes will be necessary to make our Drupal 8 site Drupal 9 compatible.
 
 1. First, we want to add Drupal core developer libraries and enable you to run tests. This is only necessary for migrating and doing development, so we will remove this later. In the terminal, run:
-```bash
+   ```bash
    composer require drupal/core-dev:8.9.0 --dev -W
-```
+   ```
 
 1. Next, we will want to add the "Upgrade Status" module which will run tests and direct us on how to upgrade our Drupal 8 site and prepare it for Drupal 9! In the terminal, run:
-```bash
+   ```bash
    composer require drupal/upgrade_status
-```
+   ```
 1. Now that we have the "Upgrade Status" module added to the site, lets turn it on. In the terminal, run:
-```bash
+   ```bash
    drush pm-enable upgrade_status -y
    ```
 1. You should already be logged into your site from the previous section, but if you are not, run `drush user-login` and cmd+click the link to login.
@@ -71,16 +71,16 @@ Next, we will download the [Upgrade Status module](https://www.drupal.org/projec
 ### Upgrade Contributed modules
 
 1. Note on the "Upgrade Status" report that the Token module is listed as incompatible with Drupal 9. However, that notice also indicates under the "Plan" column that "8.x-1.7+ is Drupal 9 compatible.". We will therefore update the Token module to _at least_ 8.x-1.7.
-  ![image](https://user-images.githubusercontent.com/539205/115734335-9e678a00-a357-11eb-8997-5163313a8f2b.png)
+   ![image](https://user-images.githubusercontent.com/539205/115734335-9e678a00-a357-11eb-8997-5163313a8f2b.png)
 1. Remember that in Drupal's Semantic versioning for Composer, the canonical version 8.x-1.7 is transformed to `1.7.0`. We will therefore use a version constraint of `"drupal/token": "^1.7.0"` to instruct Composer to install a *minimum* version of Token 1.7.0. 
 1. We can do this by using the same command above to add a module, but this time we will specify the version. **Switch** back to your IDE. In the terminal, run:
-```bash
-composer require drupal/token:^1.7.0
-```
+   ```bash
+   composer require drupal/token:^1.7.0
+   ```
 1. Your codebase has now been updated! You will want to clear the cache in order to let the system see the updated module version. In the terminal, run:
-```bash
-drush cache-rebuild
-```
+   ```bash
+   drush cache-rebuild
+   ```
 2. **Switch** back to your Drupal site, and reload the Upgrade Status report. You should see that Token has now been moved under a "Drupal 9 Compatible" heading and the row is green.  ![image](https://user-images.githubusercontent.com/332535/115777051-b34d1900-a369-11eb-9870-c8145fdb03ff.png)
 
 Your contributed modules are now Drupal 9 compatible!
@@ -145,13 +145,13 @@ Now you can save the file by going to `File -> Save` in your IDE menu.
 1. We are getting closer! The `composer.json` file will tell composer to replace Drupal 8 core with Drupal 9, so lets have it update. In the terminal, run:
    ```bash
    composer update
-```
+   ```
 1. Next, we need to clear the caches to be sure that everything sees the updated code. In the terminal, run:
-```bash
+   ```bash
    drush cache-rebuild
    ```
 1. Finally, we need to update the database so that it can make any necessary changes. In the terminal, run:
-```
+   ```
    drush updatedb -y
    ```
 1. **You're done!** To verify, **Switch** to your Drupal site, and go to **Reports** > **Status report** and verify that your **Drupal version** reads 9.1.7 instead of 8.9.14!  ![image](https://user-images.githubusercontent.com/332535/115779300-a67df480-a36c-11eb-8d60-812c7bdb812d.png)
@@ -162,21 +162,21 @@ Now you can save the file by going to `File -> Save` in your IDE menu.
 Now that we've successfully upgraded to Drupal 9, we can remove some of the tools that we installed. **Switch** to your IDE again.
 
 1. Uninstall the "Upgrade Status" module. In the terminal, run:
-```bash
-drush pm-uninstall upgrade_status
-```
+   ```bash
+   drush pm-uninstall upgrade_status
+   ```
 1. Now we can remove the "Upgrade Status" module completely. In the terminal, run:
-```bash
-composer remove drupal/upgrade_status
-```
+   ```bash
+   composer remove drupal/upgrade_status
+   ```
 1. We can also remove the core developer testing tools. In the terminal, run:
-```bash
-composer remove drupal/core-dev --dev
-```
+   ```bash
+   composer remove drupal/core-dev --dev
+   ```
 1. Finally, we can tell composer to update the codebase and get rid of those tools we no longer need. In the Terminal, run:
-```bash
-composer update
-```
+   ```bash
+   composer update
+   ```
 
 After doing this, you'll see that the Upgrade Status report and module are both gone, and your site is back to the way it was in production.
 
