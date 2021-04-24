@@ -116,7 +116,7 @@ Now you can save the file by going to `File -> Save` in your IDE menu.
    ```
    To:
    ```php
-   \Drupal::messenger()->addMessage(t("Welcome @name! You are a special person.", ['@name' => $account->getAccountName()]));
+   \Drupal::messenger()->addMessage(t("Welcome @name! You are a special person.", ['@name' => $account->getAccountName()]);
    ```
 Notice that we are just changing the function a little, but the inside of the function remains the same. This is exactly what the Upgrade Status tool told us to do. Now you can save the file by going to `File -> Save` in your IDE menu.
 1. Here comes the fun part! **Switch** back to your Drupal site, and re-scan the custom module once more in the Upgrade Status report. This time, it also moves down to the "Drupal 9 Compatible" fieldset! Congratulations - you just migrated your custom module from Drupal 8 to Drupal 9!
