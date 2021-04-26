@@ -169,6 +169,7 @@ Now you can save the file by going to `File -> Save` in your IDE menu.
    drush updatedb -y
    ```
 1. **You're done!** To verify, **Switch** to your Drupal site, and go to **Reports** > **Status report** and verify that your **Drupal version** reads 9.1.7 instead of 8.9.14!
+
 ![image](https://user-images.githubusercontent.com/539205/116137281-5622d180-a6a1-11eb-9b0b-c92a7aa8a938.png)
 
 ### Troubleshooting
