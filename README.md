@@ -121,7 +121,27 @@ Now you can save the file by going to `File -> Save` in your IDE menu.
 Notice that we are just changing the function a little, but the inside of the function remains the same. This is exactly what the Upgrade Status tool told us to do. Now you can save the file by going to `File -> Save` in your IDE menu.
 1. Here comes the fun part! **Switch** back to your Drupal site, and re-scan the custom module once more in the Upgrade Status report. This time, it also moves down to the "Drupal 9 Compatible" fieldset! Congratulations - you just migrated your custom module from Drupal 8 to Drupal 9!
 
+### Remove our tools
+
+Now that our entire site is Drupal 9 compatible, we can remove some of the tools that we installed. **Switch** to your IDE again.
+
+1. Uninstall the "Upgrade Status" module. In the terminal, run:
+   ```bash
+   drush pm-uninstall upgrade_status
+   ```
+1. Now we can remove the "Upgrade Status" module completely. In the terminal, run:
+   ```bash
+   composer remove drupal/upgrade_status
+   ```
+1. We can also remove the core developer testing tools. In the terminal, run:
+   ```bash
+   composer remove drupal/core-dev --dev
+   ```
+
+After doing this, you'll see that the Upgrade Status report and module are both gone, and your site is back to the way it was.
+
 ### Upgrade Drupal core.
+
 Now that all of our modules are Drupal 9 compatible, the last step is to upgrade Drupal core.
 
 1. We could do this using the composer command again, but it is actually pretty easy to manually make the change. **Switch** to your IDE. In the root of your explorer pane, open the `composer.json` file.
@@ -131,16 +151,10 @@ Now that all of our modules are Drupal 9 compatible, the last step is to upgrade
    ```json
    "drupal/core-composer-scaffold": "^8.9.0",
    "drupal/core-recommended": "^8.9.0",
-   ...
-   "drupal/core-dev": "^8.9.0",
-   ```
    To:
    ```json
    "drupal/core-composer-scaffold": "^9.1.0",
    "drupal/core-recommended": "^9.1.0",
-   ...
-   "drupal/core-dev": "^9.1.0",
-   ```
 Now you can save the file by going to `File -> Save` in your IDE menu.
 1. We are getting closer! The `composer.json` file will tell composer to replace Drupal 8 core with Drupal 9, so lets have it update. In the terminal, run:
    ```bash
@@ -155,30 +169,6 @@ Now you can save the file by going to `File -> Save` in your IDE menu.
    drush updatedb -y
    ```
 1. **You're done!** To verify, **Switch** to your Drupal site, and go to **Reports** > **Status report** and verify that your **Drupal version** reads 9.1.7 instead of 8.9.14!  ![image](https://user-images.githubusercontent.com/332535/115779300-a67df480-a36c-11eb-8d60-812c7bdb812d.png)
-
-
-### Cleanup
-
-Now that we've successfully upgraded to Drupal 9, we can remove some of the tools that we installed. **Switch** to your IDE again.
-
-1. Uninstall the "Upgrade Status" module. In the terminal, run:
-   ```bash
-   drush pm-uninstall upgrade_status
-   ```
-1. Now we can remove the "Upgrade Status" module completely. In the terminal, run:
-   ```bash
-   composer remove drupal/upgrade_status
-   ```
-1. We can also remove the core developer testing tools. In the terminal, run:
-   ```bash
-   composer remove drupal/core-dev --dev
-   ```
-1. Finally, we can tell composer to update the codebase and get rid of those tools we no longer need. In the Terminal, run:
-   ```bash
-   composer update
-   ```
-
-After doing this, you'll see that the Upgrade Status report and module are both gone, and your site is back to the way it was in production.
 
 ### Troubleshooting
 #### I get an error "Your requirements could not be resolved to an installable set of packages."
